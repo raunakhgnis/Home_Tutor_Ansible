@@ -71,8 +71,8 @@ spec:
     spec:
       containers:
         - name: backend
-          # image: raunakhgnis/tuu-backend:latest  # <-- change this
-          image: harshh04z/tuu-backend:latest
+          image: raunakhgnis/tuu-backend:latest  # <-- change this
+          # image: harshh04z/tuu-backend:latest
           ports:
             - containerPort: 2017
 ---
@@ -111,8 +111,8 @@ spec:
     spec:
       containers:
         - name: frontend
-          # image: raunakhgnis/tuu-frontend:latest  # <-- change this
-          image: harshh04z/tuu-frontend:latest
+          image: raunakhgnis/tuu-frontend:latest  # <-- change this
+          # image: harshh04z/tuu-frontend:latest
           ports:
             - containerPort: 80
 ---
