@@ -24,6 +24,7 @@ spec:
       containers:
         - name: mysql
           image: mysql:8.0
+          imagePullPolicy: Always
           ports:
             - containerPort: 3306
           env:
@@ -60,7 +61,7 @@ metadata:
   name: backend-deployment
   namespace: fullstack-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: backend
@@ -71,8 +72,8 @@ spec:
     spec:
       containers:
         - name: backend
-          image: raunakhgnis/tuu-backend:latest  # <-- change this
-          # image: harshh04z/tuu-backend:latest
+          image: raunakhgnis/tuu-backend:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 2017
           env:
@@ -107,7 +108,7 @@ metadata:
   name: frontend-deployment
   namespace: fullstack-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: frontend
@@ -118,8 +119,8 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: raunakhgnis/tuu-frontend:latest  # <-- change this
-          # image: harshh04z/tuu-frontend:latest
+          image: raunakhgnis/tuu-frontend:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
 ---
